@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "nuxt": "^1.1.1",
+    "vue-awesome-swiper": "^3.1.2"
+  }
+}
