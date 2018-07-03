@@ -1,10 +1,13 @@
 <template>
 <div>
-  <swiper-container class="my-swiper" :options="swiperOption" pagination>
-      <swiper-slide v-for="slide in slides" :key="slide">
+  <div class="swiper-container my-swiper" v-swiper:mySwiper="swiperOption">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" v-for="slide in slides" :key="slide">
         <img :src="slide">
-      </swiper-slide>
-  </swiper-container>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
 </div>
 </template>
 
@@ -20,12 +23,11 @@ body {
 </style>
 
 <script>
-import { SwiperContainer, SwiperSlide } from '~/swiper'
+import { directive as swiper } from '~/swiper'
 
 export default {
-  components: {
-    SwiperContainer,
-    SwiperSlide
+  directives: {
+    swiper
   },
   data () {
     const rand = Math.round(Math.random() * 500 );
